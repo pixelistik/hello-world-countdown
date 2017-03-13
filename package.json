@@ -2,7 +2,7 @@
   "name": "hello-world-countdown",
   "version": "0.1.0",
   "description": "",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
     "test": "mocha test/",
     "test:debug": "echo 'Use `debugger` in code to set a breakpoint.' && node_modules/.bin/devtool node_modules/.bin/_mocha",
@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "node-static": "^0.7.9",
     "vue": "~2.0.1",
     "webpack": "~1.13.2"
   },
