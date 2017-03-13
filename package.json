@@ -13,12 +13,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "vue": "~2.0.1"
+    "vue": "~2.0.1",
+    "webpack": "~1.13.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "devtool": "^2.3.0",
-    "mocha": "^3.1.2",
-    "webpack": "~1.13.2"
+    "mocha": "^3.1.2"
   }
 }
