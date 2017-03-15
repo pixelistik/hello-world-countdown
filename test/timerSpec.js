@@ -35,7 +35,7 @@ describe("Remaining days from date", function () {
 
     it("should ceil the days, so that tomorrow always means 1 day left", function () {
         var projectedDate = "2017-09-12";
-        var now = Date.parse("2017-09-11T23:50:00");
+        var now = new Date(2017, 9-1, 11, 23, 50, 0);
 
         var result = timer.daysUntilProjectedDate(projectedDate, now);
         assert.equal(result, 1);
