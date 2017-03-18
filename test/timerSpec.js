@@ -24,21 +24,22 @@ describe("Extract date string from URL", function () {
     });
 });
 
-describe("Remaining days from date", function () {
-    it("should calculate the days", function () {
+describe("Current day from date", function () {
+    it("should calculate the day correctly, if tomorrow is the projected date", function () {
         var projectedDate = "2017-09-12";
-        var now = Date.parse("2017-09-01T14:48:00");
+        var now = new Date(2017, 9-1, 11, 14, 48, 0);
 
-        var result = timer.daysUntilProjectedDate(projectedDate, now);
-        assert.equal(result, 11);
+        var result = timer.currentDayFromProjectedDate(projectedDate, now);
+        assert.equal(result, 279);
     });
 
-    it("should ceil the days, so that tomorrow always means 1 day left", function () {
+    it("should calculate the day correctly, if the projected date is 12 days away", function () {
         var projectedDate = "2017-09-12";
-        var now = new Date(2017, 9-1, 11, 23, 50, 0);
+        var now = new Date(2017, 9-1, 1, 23, 30, 0);
 
-        var result = timer.daysUntilProjectedDate(projectedDate, now);
-        assert.equal(result, 1);
+        var result = timer.currentDayFromProjectedDate(projectedDate, now);
+        assert.equal(result, 269);
     });
+
 
 });

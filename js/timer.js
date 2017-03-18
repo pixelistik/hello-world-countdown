@@ -14,21 +14,10 @@ var TimerFactory = function () {
             return new Date(b[0], b[1]-1, b[2], 0, 0, 0);
         };
 
-        this.daysUntilProjectedDate = function (projectedDate, now) {
-            return Math.ceil((parseDate(projectedDate) - now) / (1000 * 60 * 60 *24));
-        };
-
-        this.fromDays = function (days) {
-            var time = {};
-
-            time.weeks = Math.floor(days / 7);
-            time.days = days % 7;
-
-            return time;
-        };
-
-        this.format = function (time) {
-            return time.weeks + "+" + time.days;
+        this.currentDayFromProjectedDate = function (projectedDateRaw, now) {
+            var projectedDate = parseDate(projectedDateRaw);
+            var startDate = projectedDate - (1000 * 60 * 60 * 24 * 280);
+            return Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
         };
     };
 

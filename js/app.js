@@ -2,13 +2,15 @@
 
 var Vue = require("vue");
 var WeeksPlusDays = require('./WeeksPlusDays.js');
-// var Timer = require("./timer.js")();
+var Timer = require("./timer.js")();
+var timer = new Timer();
+var day = timer.currentDayFromProjectedDate(timer.extractDateFromUrl(window.location.hash), Date.now());
 
 Vue.component("weeks-plus-days", WeeksPlusDays);
 
 var app = new Vue({
     el: '#app',
     data: {
-        day: 30
+        day: day
     }
 });
