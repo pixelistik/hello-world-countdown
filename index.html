@@ -15,13 +15,13 @@
 
         <script>
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js');
+        //   navigator.serviceWorker.register('/sw.js');
         }
         </script>
     </head>
     <body>
         <div id="app">
-            <weeks-plus-days></weeks-plus-days>
+            <weeks-plus-days v-bind:day="day"></weeks-plus-days>
         </div>
         <script src="js/bundle.js"></script>
     </body>
