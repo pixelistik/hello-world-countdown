@@ -3,8 +3,8 @@
   "short_name": "Countdown",
   "description": "Countdown in different metrics.",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ff0000",
+  "background_color": "#333333",
+  "theme_color": "#0d62e0",
   "icons": [{
     "src": "tile.png",
     "sizes": "558x558",
