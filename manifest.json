@@ -2,7 +2,6 @@
   "name": "Hello World Countdown",
   "short_name": "Countdown",
   "description": "Countdown in different metrics.",
-  "start_url": ".",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ff0000",
