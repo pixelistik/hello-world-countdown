@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var TimerFactory = function () {
     var Timer = function () {

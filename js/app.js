@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var Vue = require("vue");
 var WeeksPlusDays = require('./WeeksPlusDays.js');

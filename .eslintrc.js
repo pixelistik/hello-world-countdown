@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 module.exports = {
     "rules": {
@@ -8,7 +8,7 @@ module.exports = {
         ],
         "quotes": [
             2,
-            "double",
+            "single",
             "avoid-escape"
         ],
         "linebreak-style": [
