@@ -15,5 +15,10 @@ var app = new Vue({
     el: '#app',
     data: {
         day: day
+    },
+    computed: {
+        componentCount: function () {
+            return this.$el.children.length;
+        }
     }
 });
