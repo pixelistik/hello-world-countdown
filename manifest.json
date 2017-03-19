@@ -1,0 +1,18 @@
+{
+  "name": "Hello World Countdown",
+  "short_name": "Countdown",
+  "description": "Countdown in different metrics.",
+  "start_url": ".",
+  "background_color": "#000000",
+  "theme_color": "#ff0000",
+  "icons": [{
+    "src": "tile.png",
+    "sizes": "558x558",
+    "type": "image/png"
+  },
+  {
+    "src": "apple-touch-icon.png",
+    "sizes": "180x180",
+    "type": "image/png"
+  }]
+}

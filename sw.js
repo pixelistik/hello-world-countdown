@@ -13,6 +13,7 @@ self.addEventListener('install', e => {
         '/js/bundle.js',
         '/css/normalize.css',
         '/css/main.css',
+        '/manifest.json'
         /*
           DEAR READER,
           ADD A LIST OF YOUR ASSETS THAT
