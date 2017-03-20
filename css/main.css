@@ -98,7 +98,7 @@ textarea {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    font-size: 35vw;
+    font-size: 20vw;
 }
 
 .info-box {
