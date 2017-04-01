@@ -162,12 +162,6 @@ var dataPoints = [
         weight: 3400
     }];
 
-var getDatapointsBeforeDay = function (day) {
-    return dataPoints.filter(function (dataPoint) {
-        return dataPoint.day <= day;
-    });
-};
-
 var interpolateValueFromDaySeries = function (normalizedDataPoints, day) {
     var lowerDataPoints = normalizedDataPoints.filter(function (dataPoint) {
         return dataPoint.day <= day;
