@@ -168,33 +168,44 @@ var getDatapointsBeforeDay = function (day) {
     });
 };
 
+var interpolateValueFromTimeSeries = function (normalizedDataPoints, day) {
+    var lowerDataPoints = normalizedDataPoints.filter(function (dataPoint) {
+        return dataPoint.day <= day;
+    });
+
+    var previousDataPoint = lowerDataPoints[lowerDataPoints.length - 1] || {day: 0, value: 0};
+    var nextDataPoint = normalizedDataPoints[lowerDataPoints.length] || {value: 0};
+
+    var growthPerDay = (nextDataPoint.value - previousDataPoint.value) / (nextDataPoint.day - previousDataPoint.day);
+
+    var daysAfterPreviousDataPoint = day - previousDataPoint.day;
+
+    return previousDataPoint.value + growthPerDay * daysAfterPreviousDataPoint;
+};
+
 var SizeWeight = {
     props: ['day'],
     template: '<div class="info-box  size-weight"> {{ size }}cm, {{ weight }}g</div>',
     computed: {
         size: function () {
-            var lowerDataPoints = getDatapointsBeforeDay(this.day);
+            var timeSeries = dataPoints.map(function (dataPoint) {
+                return {
+                    day: dataPoint.day,
+                    value: dataPoint.size
+                };
+            });
 
-            var previousDataPoint = lowerDataPoints[lowerDataPoints.length - 1] || {day: 0, size: 0, weight: 0};
-            var nextDataPoint = dataPoints[lowerDataPoints.length] || {size: 0, weight: 0};
-
-            var growthPerDay = (nextDataPoint.size - previousDataPoint.size) / (nextDataPoint.day - previousDataPoint.day);
-
-            var daysAfterPreviousDataPoint = this.day - previousDataPoint.day;
-
-            return Math.round((previousDataPoint.size + growthPerDay * daysAfterPreviousDataPoint) * 10) / 10;
+            return interpolateValueFromTimeSeries(timeSeries, this.day).toFixed(1);
         },
         weight: function () {
-            var lowerDataPoints = getDatapointsBeforeDay(this.day);
+            var timeSeries = dataPoints.map(function (dataPoint) {
+                return {
+                    day: dataPoint.day,
+                    value: dataPoint.weight
+                };
+            });
 
-            var previousDataPoint = lowerDataPoints[lowerDataPoints.length - 1] || {day: 0, size: 0, weight: 0};
-            var nextDataPoint = dataPoints[lowerDataPoints.length] || {size: 0, weight: 0};
-
-            var growthPerDay = (nextDataPoint.weight - previousDataPoint.weight) / (nextDataPoint.day - previousDataPoint.day);
-
-            var daysAfterPreviousDataPoint = this.day - previousDataPoint.day;
-
-            return Math.round(previousDataPoint.weight + growthPerDay * daysAfterPreviousDataPoint);
+            return interpolateValueFromTimeSeries(timeSeries, this.day).toFixed(0);
         }
     }
 };
