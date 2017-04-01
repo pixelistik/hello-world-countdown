@@ -164,7 +164,7 @@ var dataPoints = [
 
 var SizeWeight = {
     props: ['day'],
-    template: '<div class="info-box  size-weight"> {{ size }} cm</div>',
+    template: '<div class="info-box  size-weight"> {{ size }}cm, {{ weight }}g</div>',
     computed: {
         size: function () {
             var lowerDataPoints = dataPoints.filter(function (dataPoint) {
@@ -179,6 +179,20 @@ var SizeWeight = {
             var daysAfterPreviousDataPoint = this.day - previousDataPoint.day;
 
             return Math.round((previousDataPoint.size + growthPerDay * daysAfterPreviousDataPoint) * 10) / 10;
+        },
+        weight: function () {
+            var lowerDataPoints = dataPoints.filter(function (dataPoint) {
+                return dataPoint.day <= this.day;
+            }.bind(this));
+
+            var previousDataPoint = lowerDataPoints[lowerDataPoints.length - 1] || {day: 0, size: 0, weight: 0};
+            var nextDataPoint = dataPoints[lowerDataPoints.length] || {size: 0, weight: 0};
+
+            var growthPerDay = (nextDataPoint.weight - previousDataPoint.weight) / (nextDataPoint.day - previousDataPoint.day);
+
+            var daysAfterPreviousDataPoint = this.day - previousDataPoint.day;
+
+            return Math.round(previousDataPoint.weight + growthPerDay * daysAfterPreviousDataPoint);
         }
     }
 };

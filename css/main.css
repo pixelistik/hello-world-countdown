@@ -108,7 +108,9 @@ textarea {
     justify-content: center;
 }
 
-
+.size-weight {
+    font-size: 11vw;
+}
 
 /* ==========================================================================
    Helper classes
