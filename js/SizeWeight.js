@@ -168,7 +168,7 @@ var getDatapointsBeforeDay = function (day) {
     });
 };
 
-var interpolateValueFromTimeSeries = function (normalizedDataPoints, day) {
+var interpolateValueFromDaySeries = function (normalizedDataPoints, day) {
     var lowerDataPoints = normalizedDataPoints.filter(function (dataPoint) {
         return dataPoint.day <= day;
     });
@@ -188,24 +188,24 @@ var SizeWeight = {
     template: '<div class="info-box  size-weight"> {{ size }}cm, {{ weight }}g</div>',
     computed: {
         size: function () {
-            var timeSeries = dataPoints.map(function (dataPoint) {
+            var daySeries = dataPoints.map(function (dataPoint) {
                 return {
                     day: dataPoint.day,
                     value: dataPoint.size
                 };
             });
 
-            return interpolateValueFromTimeSeries(timeSeries, this.day).toFixed(1);
+            return interpolateValueFromDaySeries(daySeries, this.day).toFixed(1);
         },
         weight: function () {
-            var timeSeries = dataPoints.map(function (dataPoint) {
+            var daySeries = dataPoints.map(function (dataPoint) {
                 return {
                     day: dataPoint.day,
                     value: dataPoint.weight
                 };
             });
 
-            return interpolateValueFromTimeSeries(timeSeries, this.day).toFixed(0);
+            return interpolateValueFromDaySeries(daySeries, this.day).toFixed(0);
         }
     }
 };
