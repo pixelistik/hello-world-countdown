@@ -29,6 +29,10 @@ self.addEventListener('install', e => {
 // the cached object or go ahead and fetch the actual url
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(res => res || fetch(event.request))
+    caches.open(cacheName)
+        .then(function (cache) {
+            return cache.match(event.request).then(res => res || fetch(event.request))
+        })
+
   );
 });
