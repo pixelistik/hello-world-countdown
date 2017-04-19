@@ -20,7 +20,8 @@
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
                 <percentage v-bind:day="day" v-if="visibleMetrics.indexOf('Percentage') !== -1"></percentage>
-                <size-weight v-bind:day="day" v-if="visibleMetrics.indexOf('SizeWeight') !== -1"></size-weight>
+                <size v-bind:day="day" v-if="visibleMetrics.indexOf('Size') !== -1"></size>
+                <weight v-bind:day="day" v-if="visibleMetrics.indexOf('Weight') !== -1"></weight>
             </div>
             <div class="settings" v-if="displaySettings">
                 <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
@@ -32,8 +33,11 @@
                 <input type="checkbox" id="Percentage" value="Percentage" v-model="visibleMetrics"/>
                 <label for="Percentage">Percentage</label>
 
-                <input type="checkbox" id="SizeWeight" value="SizeWeight" v-model="visibleMetrics"/>
-                <label for="SizeWeight">Size + Weight</label>
+                <input type="checkbox" id="Size" value="Size" v-model="visibleMetrics"/>
+                <label for="Size">Size</label>
+
+                <input type="checkbox" id="Weight" value="Weight" v-model="visibleMetrics"/>
+                <label for="Weight">Weight</label>
             </div>
         </div>
         <script src="js/bundle.js"></script>
