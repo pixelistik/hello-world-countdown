@@ -17,22 +17,31 @@ Vue.component('current-month', CurrentMonth);
 Vue.component('size', Size);
 Vue.component('weight', Weight);
 
+var visibleMetrics = JSON.parse(localStorage.getItem('visibleMetrics')) || [
+    'CurrentMonth',
+    'WeeksPlusDays',
+    'Percentage',
+    'Size',
+    'Weight'
+];
+
 var app = new Vue({
     el: '#app',
     data: {
         day: day,
         displaySettings: false,
-        visibleMetrics: [
-            'CurrentMonth',
-            'WeeksPlusDays',
-            'Percentage',
-            'Size',
-            'Weight'
-        ]
+        visibleMetrics: visibleMetrics
     },
     methods: {
         toggleSettings: function () {
             this.displaySettings = !this.displaySettings;
+        }
+    },
+    watch: {
+        visibleMetrics: function (newValue) {
+            if (localStorage) {
+                localStorage.setItem('visibleMetrics', JSON.stringify(newValue));
+            }
         }
     }
 });
