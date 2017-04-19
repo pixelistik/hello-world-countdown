@@ -107,6 +107,14 @@ textarea {
     justify-content: center;
 }
 
+.settings {
+    font-size: 3rem;
+}
+
+.settings label {
+    display: block;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
