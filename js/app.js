@@ -19,11 +19,17 @@ var app = new Vue({
     el: '#app',
     data: {
         day: day,
+        displaySettings: false,
         visibleMetrics: [
             'CurrentMonth',
             'WeeksPlusDays',
             'Percentage',
             'SizeWeight'
         ]
+    },
+    methods: {
+        toggleSettings: function () {
+            this.displaySettings = !this.displaySettings;
+        }
     }
 });

@@ -15,13 +15,14 @@
     </head>
     <body>
         <div id="app">
-            <div class="info-box-container" v-bind:style="{fontSize: 100/visibleMetrics.length + 'vh', }">
+            <button v-on:click="toggleSettings">Settings</button>
+            <div class="info-box-container" v-if="!displaySettings" v-bind:style="{fontSize: 100/visibleMetrics.length + 'vh', }">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
                 <percentage v-bind:day="day" v-if="visibleMetrics.indexOf('Percentage') !== -1"></percentage>
                 <size-weight v-bind:day="day" v-if="visibleMetrics.indexOf('SizeWeight') !== -1"></size-weight>
             </div>
-            <div class="settings">
+            <div class="settings" v-if="displaySettings">
                 <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
                 <label for="CurrentMonth">Current Month</label>
 
