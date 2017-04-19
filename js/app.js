@@ -18,7 +18,13 @@ Vue.component('size-weight', SizeWeight);
 var app = new Vue({
     el: '#app',
     data: {
-        day: day
+        day: day,
+        visibleMetrics: [
+            'CurrentMonth',
+            'WeeksPlusDays',
+            'Percentage',
+            'SizeWeight'
+        ]
     },
     computed: {
         componentCount: function () {

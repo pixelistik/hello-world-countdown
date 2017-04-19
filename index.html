@@ -14,11 +14,26 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div id="app" class="info-box-container">
-            <current-month v-bind:day="day"></current-month>
-            <weeks-plus-days v-bind:day="day"></weeks-plus-days>
-            <percentage v-bind:day="day"></percentage>
-            <size-weight v-bind:day="day"></size-weight>
+        <div id="app" class="">
+            <div class="info-box-container">
+                <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
+                <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
+                <percentage v-bind:day="day" v-if="visibleMetrics.indexOf('Percentage') !== -1"></percentage>
+                <size-weight v-bind:day="day" v-if="visibleMetrics.indexOf('SizeWeight') !== -1"></size-weight>
+            </div>
+            <div class="settings">
+                <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
+                <label for="CurrentMonth">Current Month</label>
+
+                <input type="checkbox" id="WeeksPlusDays" value="WeeksPlusDays" v-model="visibleMetrics"/>
+                <label for="WeeksPlusDays">Weeks + Days</label>
+
+                <input type="checkbox" id="Percentage" value="Percentage" v-model="visibleMetrics"/>
+                <label for="Percentage">Percentage</label>
+
+                <input type="checkbox" id="SizeWeight" value="SizeWeight" v-model="visibleMetrics"/>
+                <label for="SizeWeight">Size + Weight</label>
+            </div>
         </div>
         <script src="js/bundle.js"></script>
         <script>
