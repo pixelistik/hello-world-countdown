@@ -25,10 +25,5 @@ var app = new Vue({
             'Percentage',
             'SizeWeight'
         ]
-    },
-    computed: {
-        componentCount: function () {
-            return this.$el.children.length;
-        }
     }
 });

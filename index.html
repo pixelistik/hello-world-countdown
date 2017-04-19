@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div id="app" class="">
-            <div class="info-box-container">
+        <div id="app">
+            <div class="info-box-container" v-bind:style="{fontSize: 100/visibleMetrics.length + 'vh', }">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
                 <percentage v-bind:day="day" v-if="visibleMetrics.indexOf('Percentage') !== -1"></percentage>
