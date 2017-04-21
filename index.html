@@ -14,10 +14,10 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div id="app">
+        <div id="app" class="container">
             <button v-on:click="toggleSettings" class="waves-effect waves-light btn">Settings</button>
 
-            <div class="container" v-if="!displaySettings">
+            <div class="section row" v-if="!displaySettings">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
                 <percentage v-bind:day="day" v-if="visibleMetrics.indexOf('Percentage') !== -1"></percentage>
@@ -25,7 +25,7 @@
                 <weight v-bind:day="day" v-if="visibleMetrics.indexOf('Weight') !== -1"></weight>
             </div>
 
-            <div class="settings  container" v-if="displaySettings">
+            <div class="settings section" v-if="displaySettings">
                 <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
                 <label for="CurrentMonth">
                     Current Month
