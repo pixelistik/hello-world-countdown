@@ -45,3 +45,6 @@ var app = new Vue({
         }
     }
 });
+
+// require('./node_modules/materialize-css/dist/js/materialize.js');
+// require('materialize-css');

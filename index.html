@@ -10,12 +10,13 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div id="app">
-            <button v-on:click="toggleSettings">Settings</button>
+            <button v-on:click="toggleSettings" class="waves-effect waves-light btn">Settings</button>
+
             <div class="info-box-container" v-if="!displaySettings" v-bind:style="{fontSize: 40/visibleMetrics.length + 'vh', }">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
@@ -23,33 +24,35 @@
                 <size v-bind:day="day" v-if="visibleMetrics.indexOf('Size') !== -1"></size>
                 <weight v-bind:day="day" v-if="visibleMetrics.indexOf('Weight') !== -1"></weight>
             </div>
-            <div class="settings" v-if="displaySettings">
-                <label>
-                    <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
+
+            <div class="settings  container" v-if="displaySettings">
+                <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
+                <label for="CurrentMonth">
                     Current Month
                 </label>
 
-                <label>
-                    <input type="checkbox" id="WeeksPlusDays" value="WeeksPlusDays" v-model="visibleMetrics"/>
+                <input type="checkbox" id="WeeksPlusDays" value="WeeksPlusDays" v-model="visibleMetrics"/>
+                <label for="WeeksPlusDays">
                     Weeks + Days
                 </label>
 
-                <label>
-                    <input type="checkbox" id="Percentage" value="Percentage" v-model="visibleMetrics"/>
+                <input type="checkbox" id="Percentage" value="Percentage" v-model="visibleMetrics"/>
+                <label for="Percentage">
                     Percentage
                 </label>
 
-                <label>
-                    <input type="checkbox" id="Size" value="Size" v-model="visibleMetrics"/>
+                <input type="checkbox" id="Size" value="Size" v-model="visibleMetrics"/>
+                <label for="Size">
                     Size
                 </label>
 
-                <label>
-                    <input type="checkbox" id="Weight" value="Weight" v-model="visibleMetrics"/>
+                <input type="checkbox" id="Weight" value="Weight" v-model="visibleMetrics"/>
+                <label for="Weight">
                     Weight
                 </label>
             </div>
         </div>
+        <!-- <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script> -->
         <script src="js/bundle.js"></script>
         <script>
         if ('serviceWorker' in navigator) {
