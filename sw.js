@@ -11,7 +11,8 @@ self.addEventListener('install', e => {
       return cache.addAll([
         '/',
         '/js/bundle.js',
-        '/css/normalize.css',
+        '/node_modules/materialize-css/dist/css/materialize.min.css',
+        '/node_modules/materialize-css/dist/fonts/roboto/Roboto-Regular.woff2',
         '/css/main.css',
         '/manifest.json'
         /*
