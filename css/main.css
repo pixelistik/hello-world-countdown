@@ -94,18 +94,6 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.info-box-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.info-box {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .settings {
     font-size: 3rem;

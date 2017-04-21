@@ -17,7 +17,7 @@
         <div id="app">
             <button v-on:click="toggleSettings" class="waves-effect waves-light btn">Settings</button>
 
-            <div class="info-box-container" v-if="!displaySettings" v-bind:style="{fontSize: 40/visibleMetrics.length + 'vh', }">
+            <div class="container" v-if="!displaySettings">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
                 <percentage v-bind:day="day" v-if="visibleMetrics.indexOf('Percentage') !== -1"></percentage>

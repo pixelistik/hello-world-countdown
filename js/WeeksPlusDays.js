@@ -2,7 +2,7 @@
 
 var WeeksPlusDays= {
     props: ['day'],
-    template: '<div class="info-box  weeks-days"> {{ weeks }}+{{ days }} </div>',
+    template: '<div class="card"><div class="card-content weeks-plus-days">{{ weeks }}+{{ days }}</div></div>',
     computed: {
         weeks: function () {
             return Math.floor(this.day / 7);

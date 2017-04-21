@@ -2,7 +2,7 @@
 
 var CurrentMonth= {
     props: ['day'],
-    template: '<div class="info-box  current-month"> {{ month }}. Monat</div>',
+    template: '<div class="card"><div class="card-content current-month">{{ month }}. Monat</div></div>',
     computed: {
         month: function () {
             return Math.ceil(this.day / 30);

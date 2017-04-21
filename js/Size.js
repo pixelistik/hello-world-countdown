@@ -179,7 +179,7 @@ var interpolateValueFromDaySeries = function (normalizedDataPoints, day) {
 
 var SizeWeight = {
     props: ['day'],
-    template: '<div class="info-box  size"> {{ size }}cm</div>',
+    template: '<div class="card"><div class="card-content size">{{ size }}cm</div></div>',
     computed: {
         size: function () {
             var daySeries = dataPoints.map(function (dataPoint) {
