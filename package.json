@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha test/",
+    "test:watch": "mocha --watch test/",
+    "test:coverage": "istanbul cover _mocha test/",
     "test:debug": "echo 'Use `debugger` in code to set a breakpoint.' && node_modules/.bin/devtool node_modules/.bin/_mocha",
     "build": "webpack -p ./js/app.js ./js/bundle.js",
     "build:watch": "webpack -d --progress --colors --watch ./js/app.js ./js/bundle.js",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "devtool": "^2.3.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2"
   }
 }
