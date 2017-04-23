@@ -25,7 +25,7 @@ var visibleMetrics = JSON.parse(localStorage.getItem('visibleMetrics')) || [
     'Weight'
 ];
 
-var App = require('./App.js')(day, visibleMetrics);
+var App = require('./App.js')(window, document, day, visibleMetrics);
 var app = new Vue(App);
 
 app.$mount(document.getElementById('app'));

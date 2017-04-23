@@ -3,7 +3,11 @@
 var assert = require('chai').assert;
 var Vue = require('vue');
 var appFactory = require('../js/App.js');
-var Component = Vue.extend(appFactory(100, ''));
+
+var windowStub = {};
+var documentStub = {};
+
+var Component = Vue.extend(appFactory(windowStub, documentStub, 100, ''));
 
 describe('App', function () {
     var component;

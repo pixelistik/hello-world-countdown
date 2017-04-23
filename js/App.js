@@ -1,6 +1,6 @@
 'use strict';
 
-var AppFactory = function (day, visibleMetrics) {
+var AppFactory = function (window, document, day, visibleMetrics) {
     var App = {
         data: function () {
             return {
@@ -15,11 +15,11 @@ var AppFactory = function (day, visibleMetrics) {
                 this.displaySettings = !this.displaySettings;
             },
             touchStart: function () {
-                this.touchTimer = setTimeout(this.longTouch, 500);
+                this.touchTimer = window.setTimeout(this.longTouch, 500);
             },
             touchEnd: function () {
                 if (this.touchTimer) {
-                    clearTimeout(this.touchTimer);
+                    window.clearTimeout(this.touchTimer);
                 }
             },
             longTouch: function () {
