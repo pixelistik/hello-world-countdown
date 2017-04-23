@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body class="countdown-app">
         <div id="app" class="container" v-on:touchstart="touchStart" v-on:touchend="touchEnd">
             <div class="section row" v-if="!displaySettings">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
