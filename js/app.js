@@ -30,11 +30,23 @@ var app = new Vue({
     data: {
         day: day,
         displaySettings: false,
-        visibleMetrics: visibleMetrics
+        visibleMetrics: visibleMetrics,
+        touchTimer: false,
     },
     methods: {
         toggleSettings: function () {
             this.displaySettings = !this.displaySettings;
+        },
+        touchStart: function () {
+            this.touchTimer = setTimeout(this.longTouch, 500);
+        },
+        touchEnd: function () {
+            if (this.touchTimer) {
+                clearTimeout(this.touchTimer);
+            }
+        },
+        longTouch: function () {
+            this.toggleSettings();
         }
     },
     watch: {

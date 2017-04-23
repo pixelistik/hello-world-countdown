@@ -14,9 +14,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div id="app" class="container">
-            <button v-on:click="toggleSettings" class="waves-effect waves-light btn">Settings</button>
-
+        <div id="app" class="container" v-on:touchstart="touchStart" v-on:touchend="touchEnd">
             <div class="section row" v-if="!displaySettings">
                 <current-month v-bind:day="day" v-if="visibleMetrics.indexOf('CurrentMonth') !== -1"></current-month>
                 <weeks-plus-days v-bind:day="day" v-if="visibleMetrics.indexOf('WeeksPlusDays') !== -1"></weeks-plus-days>
@@ -26,6 +24,7 @@
             </div>
 
             <div class="settings section" v-if="displaySettings">
+                <button v-on:click="toggleSettings" class="btn">Close settings</button>
                 <h3>Widgets</h2>
                 <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
                 <label for="CurrentMonth">
