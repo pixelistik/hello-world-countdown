@@ -28,5 +28,7 @@ var visibleMetrics = JSON.parse(localStorage.getItem('visibleMetrics')) || [
 var App = require('./App.js')(day, visibleMetrics);
 var app = new Vue(App);
 
+app.$mount(document.getElementById('app'));
+
 // require('./node_modules/materialize-css/dist/js/materialize.js');
 // require('materialize-css');

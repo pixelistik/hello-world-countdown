@@ -2,12 +2,13 @@
 
 var AppFactory = function (day, visibleMetrics) {
     var App = {
-        el: '#app',
-        data: {
-            day: day,
-            displaySettings: false,
-            visibleMetrics: visibleMetrics,
-            touchTimer: false,
+        data: function () {
+            return {
+                day: day,
+                displaySettings: false,
+                visibleMetrics: visibleMetrics,
+                touchTimer: false,
+            };
         },
         methods: {
             toggleSettings: function () {
