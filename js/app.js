@@ -25,38 +25,8 @@ var visibleMetrics = JSON.parse(localStorage.getItem('visibleMetrics')) || [
     'Weight'
 ];
 
-var app = new Vue({
-    el: '#app',
-    data: {
-        day: day,
-        displaySettings: false,
-        visibleMetrics: visibleMetrics,
-        touchTimer: false,
-    },
-    methods: {
-        toggleSettings: function () {
-            this.displaySettings = !this.displaySettings;
-        },
-        touchStart: function () {
-            this.touchTimer = setTimeout(this.longTouch, 500);
-        },
-        touchEnd: function () {
-            if (this.touchTimer) {
-                clearTimeout(this.touchTimer);
-            }
-        },
-        longTouch: function () {
-            this.toggleSettings();
-        }
-    },
-    watch: {
-        visibleMetrics: function (newValue) {
-            if (localStorage) {
-                localStorage.setItem('visibleMetrics', JSON.stringify(newValue));
-            }
-        }
-    }
-});
+var App = require('./App.js')(day, visibleMetrics);
+var app = new Vue(App);
 
 // require('./node_modules/materialize-css/dist/js/materialize.js');
 // require('materialize-css');
