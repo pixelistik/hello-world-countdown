@@ -190,16 +190,6 @@ var SizeWeight = {
             });
 
             return interpolateValueFromDaySeries(daySeries, this.day).toFixed(1);
-        },
-        weight: function () {
-            var daySeries = dataPoints.map(function (dataPoint) {
-                return {
-                    day: dataPoint.day,
-                    value: dataPoint.weight
-                };
-            });
-
-            return interpolateValueFromDaySeries(daySeries, this.day).toFixed(0);
         }
     }
 };
