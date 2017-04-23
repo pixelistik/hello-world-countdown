@@ -23,33 +23,35 @@
                 <weight v-bind:day="day" v-if="visibleMetrics.indexOf('Weight') !== -1"></weight>
             </div>
 
-            <div class="settings section" v-if="displaySettings">
-                <button v-on:click="toggleSettings" class="btn">Close settings</button>
-                <h3>Widgets</h2>
-                <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
-                <label for="CurrentMonth">
-                    Current Month
-                </label>
+            <div class="settings card" v-if="displaySettings">
+                <div class="card-content">
+                    <button v-on:click="toggleSettings" class="btn">Close settings</button>
+                    <h3>Widgets</h3>
+                    <input type="checkbox" id="CurrentMonth" value="CurrentMonth" v-model="visibleMetrics"/>
+                    <label for="CurrentMonth">
+                        Current Month
+                    </label>
 
-                <input type="checkbox" id="WeeksPlusDays" value="WeeksPlusDays" v-model="visibleMetrics"/>
-                <label for="WeeksPlusDays">
-                    Weeks + Days
-                </label>
+                    <input type="checkbox" id="WeeksPlusDays" value="WeeksPlusDays" v-model="visibleMetrics"/>
+                    <label for="WeeksPlusDays">
+                        Weeks + Days
+                    </label>
 
-                <input type="checkbox" id="Percentage" value="Percentage" v-model="visibleMetrics"/>
-                <label for="Percentage">
-                    Percentage
-                </label>
+                    <input type="checkbox" id="Percentage" value="Percentage" v-model="visibleMetrics"/>
+                    <label for="Percentage">
+                        Percentage
+                    </label>
 
-                <input type="checkbox" id="Size" value="Size" v-model="visibleMetrics"/>
-                <label for="Size">
-                    Size
-                </label>
+                    <input type="checkbox" id="Size" value="Size" v-model="visibleMetrics"/>
+                    <label for="Size">
+                        Size
+                    </label>
 
-                <input type="checkbox" id="Weight" value="Weight" v-model="visibleMetrics"/>
-                <label for="Weight">
-                    Weight
-                </label>
+                    <input type="checkbox" id="Weight" value="Weight" v-model="visibleMetrics"/>
+                    <label for="Weight">
+                        Weight
+                    </label>
+                </div>
             </div>
         </div>
         <!-- <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script> -->
