@@ -32,6 +32,11 @@ var AppFactory = function (window, document, day, visibleMetrics) {
                     localStorage.setItem('visibleMetrics', JSON.stringify(newValue));
                 }
             }
+        },
+        mounted: function () {
+            if ('serviceWorker' in window.navigator) {
+                window.navigator.serviceWorker.register('/sw.js');
+            }
         }
     };
 
