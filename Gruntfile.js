@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 files: {
-                    'css/materialize-custom.min.css': 'css/materialize-custom.css'
+                    'css/combined.css': ['css/materialize-custom.css', 'css/main.css']
                 }
             },
             options: {
