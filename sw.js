@@ -1,7 +1,7 @@
 // https://remysharp.com/2016/03/22/the-copy--paste-guide-to-your-first-service-worker
 // we'll version our cache (and learn how to delete caches in
 // some other post)
-const cacheName = 'v0.9.1::static';
+const cacheName = 'v0.10.0::static';
 
 self.addEventListener('install', e => {
   // once the SW is installed, go ahead and fetch the resources
