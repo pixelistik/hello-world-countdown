@@ -22,7 +22,24 @@ module.exports = function (grunt) {
             options: {
                 sourceMap: true
             }
+        },
+        compress: {
+            main: {
+                options: {
+                    mode: 'gzip',
+                },
+                files: [{
+                    expand: true,
+                    src: ['css/combined.css'],
+                    ext: '.css.gz'
+                },
+                {
+                    expand: true,
+                    src: ['js/bundle.js'],
+                    ext: '.js.gz'
+                }]
+            }
         }
     });
-    grunt.registerTask('default', ['sass', 'cssmin']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'compress']);
 };
