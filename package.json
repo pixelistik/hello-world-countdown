@@ -26,6 +26,7 @@
     "devtool": "^2.3.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-cssmin": "^2.2.0",
     "grunt-sass": "^2.0.0",
     "istanbul": "^0.4.5",
     "load-grunt-tasks": "^3.5.2",
