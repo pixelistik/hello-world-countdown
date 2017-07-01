@@ -22,9 +22,9 @@
     "grunt-contrib-cssmin": "^2.2.0",
     "grunt-sass": "^2.0.0",
     "load-grunt-tasks": "^3.5.2",
-    "materialize-css": "^0.98.2",
+    "materialize-css": "^0.99",
     "node-static": "^0.7.9",
-    "vue": "~2.0.1",
+    "vue": "~2.3",
     "webpack": "~1.13.2"
   },
   "devDependencies": {

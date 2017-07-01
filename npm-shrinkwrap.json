@@ -958,9 +958,9 @@
       "optional": true
     },
     "jquery": {
-      "version": "2.2.4",
-      "from": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz",
-      "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz"
+      "version": "3.2.1",
+      "from": "jquery@>=3.2.1 <4.0.0",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.2.1.tgz"
     },
     "js-base64": {
       "version": "2.1.9",
@@ -1082,9 +1082,9 @@
       "from": "map-obj@>=1.0.1 <2.0.0"
     },
     "materialize-css": {
-      "version": "0.98.2",
-      "from": "materialize-css@latest",
-      "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.98.2.tgz"
+      "version": "0.99.0",
+      "from": "materialize-css@0.99.0",
+      "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.99.0.tgz"
     },
     "maxmin": {
       "version": "2.1.0",
@@ -1159,11 +1159,6 @@
       "version": "2.6.2",
       "from": "nan@>=2.3.2 <3.0.0",
       "resolved": "https://registry.npmjs.org/nan/-/nan-2.6.2.tgz"
-    },
-    "node-archiver": {
-      "version": "0.3.0",
-      "from": "node-archiver@>=0.3.0 <0.4.0",
-      "resolved": "https://registry.npmjs.org/node-archiver/-/node-archiver-0.3.0.tgz"
     },
     "node-gyp": {
       "version": "3.6.2",
@@ -1792,9 +1787,9 @@
       "resolved": "https://registry.npmjs.org/vm-browserify/-/vm-browserify-0.0.4.tgz"
     },
     "vue": {
-      "version": "2.0.8",
-      "from": "vue@2.0.8",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.0.8.tgz"
+      "version": "2.3.4",
+      "from": "vue@2.3.4",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.3.4.tgz"
     },
     "walkdir": {
       "version": "0.0.11",
